@@ -1,0 +1,499 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Streetwear;
+  src: url("../fonts/Streetwear.otf") format("opentype");
+}
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1030px;
+  padding: 0 15px;
+}
+
+.anim-harmonic {
+  animation: anim-harm 2s;
+}
+
+.header {
+  margin-top: 40px;
+}
+.header__top {
+  padding-bottom: 30px;
+  border-bottom: 2px #f7f7f7 solid;
+}
+.header__top-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.header__phone-text {
+  padding-left: 25px;
+  position: relative;
+  line-height: 25px;
+  color: #666666;
+}
+.header__phone-text span {
+  display: block;
+  color: #000000;
+  line-height: 20px;
+}
+.header__phone-text:before {
+  color: #000000;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  font-family: icomoon;
+  content: "";
+  font-size: 45px;
+}
+.header__title {
+  font-family: "Roboto Light", sans-serif;
+  font-size: 53px;
+  line-height: 36px;
+  letter-spacing: -2.5px;
+  transition-duration: 1s;
+  transform: scale(0, 0);
+}
+.header__title.active {
+  transform: scale(1, 1);
+}
+.header__search {
+  width: 200px;
+  font-size: 14px;
+  line-height: 25px;
+  padding: 5px 10px;
+  outline: none;
+  border: 1px #666666 solid;
+  border-radius: 20px;
+}
+.header__menu {
+  padding: 23px 0 25px 0;
+  border-bottom: 2px #f7f7f7 solid;
+}
+.header__menu .menu__list {
+  display: flex;
+  justify-content: flex-start;
+  text-transform: capitalize;
+}
+.header__menu .menu__list-item {
+  margin-right: 23px;
+}
+.header__menu .menu__list-link:hover {
+  color: #666666;
+}
+.header__benefits {
+  padding: 30px 0;
+}
+.header__benefits-inner {
+  display: flex;
+  justify-content: space-between;
+}
+.header__benefits-inner div {
+  line-height: 25px;
+  position: relative;
+}
+.header__benefits-inner div:before {
+  position: absolute;
+  left: 0;
+  font-family: icomoon;
+}
+.header__benefits-secure {
+  padding-left: 25px;
+}
+.header__benefits-secure:before {
+  content: "";
+  top: -3px;
+  font-size: 25px;
+  color: #2288b1;
+}
+.header__benefits-order {
+  padding-left: 33px;
+}
+.header__benefits-order:before {
+  content: "";
+  color: #fc6f56;
+  font-size: 25px;
+  top: -3px;
+}
+.header__benefits-satisfaction {
+  padding-left: 33px;
+}
+.header__benefits-satisfaction:before {
+  color: #7ebf55;
+  content: "";
+  font-size: 25px;
+  top: -3px;
+}
+
+.main {
+  background-color: #f7f7f7;
+}
+
+.order {
+  display: flex;
+  padding-top: 5px;
+}
+.order__list {
+  min-width: 250px;
+  list-style: none;
+  margin-right: 5px;
+}
+.order__list-item {
+  background-color: #ffffff;
+  min-height: 160px;
+  margin-bottom: 5px;
+  padding: 20px;
+  transition-duration: 1s;
+  transition-delay: 0.2s;
+  cursor: pointer;
+  transform: scale(0, 0);
+}
+.order__list-item.active:first-child {
+  transition: all 0.8s ease 0s;
+  transform: scale(1, 1);
+}
+.order__list-item.active:nth-child(2) {
+  transition: all 0.8s ease 0.2s;
+  transform: scale(1, 1);
+}
+.order__list-item.active:last-child {
+  transition: all 0.8s ease 0.4s;
+  transform: scale(1, 1);
+}
+.order__list-item:hover {
+  background-color: antiquewhite;
+}
+.order__list-title {
+  text-transform: uppercase;
+  line-height: 25px;
+  color: #666666;
+  padding-bottom: 21px;
+  position: relative;
+}
+.order__list-title span {
+  font-size: 21px;
+  line-height: 25px;
+  color: #000;
+  display: block;
+  font-weight: bold;
+}
+.order__list-title:after {
+  position: absolute;
+  content: "::::::::::::::::::::::::";
+  bottom: 0;
+  left: 0;
+  color: #000;
+  letter-spacing: 1px;
+  font-size: 12px;
+  line-height: 0;
+}
+.order__list-text {
+  margin: 15px 0;
+  text-transform: capitalize;
+  line-height: 25px;
+}
+.order__list-link {
+  display: block;
+  border: 1px #000 solid;
+  border-radius: 50%;
+  width: 21px;
+  height: 21px;
+  position: relative;
+}
+.order__list-link:before {
+  content: ">";
+  position: absolute;
+  transform: translate(70%, 19%);
+}
+.order__slider-item {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-width: 740px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+}
+.order__slider-content {
+  margin-right: 50px;
+}
+.order__slider-title {
+  font-family: Streetwear;
+  font-size: 36px;
+  line-height: 25px;
+  text-transform: capitalize;
+  border-bottom: 1px #dcdbd9 solid;
+  padding-bottom: 15px;
+}
+.order__slider-title span {
+  color: #fc6f56;
+}
+.order__slider-text {
+  font-size: 21px;
+  line-height: 25px;
+  text-transform: capitalize;
+  padding: 15px 0;
+  border-bottom: 1px #dcdbd9 solid;
+  margin-left: 10px;
+}
+.order__slider-link {
+  text-align: center;
+  display: block;
+  width: 136px;
+  border: 1px #000 solid;
+  margin-top: 20px;
+  text-transform: capitalize;
+  font-weight: bold;
+  line-height: 25px;
+  padding: 3px 0;
+  border-radius: 22px;
+  margin-left: 25%;
+}
+
+.products {
+  padding-top: 60px;
+}
+.products__title {
+  font-family: "Roboto Light";
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 30px;
+}
+.products__list {
+  display: flex;
+  justify-content: space-between;
+}
+.products__list-title {
+  font-size: 14px;
+  line-height: 25px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.products__list:first-child {
+  transition: all 1s ease 0.4s;
+}
+.products__list:last-child {
+  transition: all 1s ease 0.2s;
+}
+.products__list.active {
+  transform: translate(0, 0);
+}
+.products__item-order {
+  display: flex;
+  justify-content: center;
+  padding-top: 11px;
+  align-items: center;
+}
+.products__item-price {
+  font-size: 16px;
+  line-height: 25px;
+  margin-right: 12px;
+}
+.products__item-link {
+  display: block;
+  width: 96px;
+  border: 1px #000 solid;
+  border-radius: 20px;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 13px;
+  line-height: 25px;
+  transition-duration: 1s;
+}
+.products__item-link:hover {
+  background-color: antiquewhite;
+  border: 1px solid antiquewhite;
+}
+
+.footer {
+  background-color: #f2f2f2;
+  padding-top: 75px;
+  color: #333333;
+}
+.footer_title {
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 25px;
+  margin-bottom: 26px;
+  color: #000000;
+  text-transform: capitalize;
+}
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  transition: all 1s ease 0.8s;
+}
+.footer__top.active {
+  opacity: 1;
+}
+.footer ul li {
+  font-size: 13px;
+  line-height: 26px;
+}
+.footer__links-link:hover {
+  color: #666666;
+}
+.footer__info-link:hover {
+  color: #666666;
+}
+.footer__links, .footer__info {
+  max-width: 200px;
+}
+.footer__testimonials {
+  max-width: 225px;
+}
+.footer__form {
+  max-width: 230px;
+}
+.footer__form-text {
+  font-size: 13px;
+  line-height: 25px;
+}
+.footer__form input {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  color: #999999;
+  line-height: 13px;
+  background-color: #ffffff;
+  outline: none;
+  border: 1px #999999 solid;
+  padding: 15px;
+  border-radius: 30px;
+}
+.footer .green_btn {
+  background-color: #6fb07f;
+  color: #e7f1e9;
+  text-align: center;
+  cursor: pointer;
+  transition-duration: 1s;
+}
+.footer .green_btn:hover {
+  background-color: darkgreen;
+}
+.footer__testimonials-text {
+  color: #333333;
+  font-size: 13px;
+  line-height: 25px;
+  margin-bottom: 30px;
+  position: relative;
+  padding-left: 18px;
+}
+.footer__testimonials-text:before {
+  content: "“";
+  font-size: 30px;
+  line-height: 25px;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  color: #c0c0c0;
+}
+.footer__bottom {
+  background-color: #ffffff;
+}
+.footer__bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  align-items: center;
+}
+.footer__bottom-text {
+  font-size: 13px;
+  color: #999999;
+  line-height: 25px;
+}
+.footer__bottom-media {
+  display: flex;
+}
+.footer__bottom-images {
+  cursor: pointer;
+}
+.footer__bottom-media > div:before {
+  cursor: pointer;
+}
+.footer__media-facebook, .footer__media-twitter {
+  margin-right: 11px;
+}
+.footer__media-facebook:before {
+  font-family: icomoon;
+  font-size: 20px;
+  color: #999999;
+  content: "";
+  line-height: 25px;
+}
+.footer__media-facebook:hover:before {
+  color: #28497d;
+}
+.footer__media-twitter:before {
+  font-family: icomoon;
+  font-size: 20px;
+  color: #999999;
+  content: "";
+  line-height: 25px;
+}
+.footer__media-twitter:hover:before {
+  color: #2288b1;
+}
+.footer__media-instagram:before {
+  font-family: icomoon;
+  font-size: 20px;
+  color: #999999;
+  content: "";
+  line-height: 25px;
+}
+.footer__media-instagram:hover:before {
+  background: -webkit-linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes anim-harm {
+  10% {
+    opacity: 0.1;
+    letter-spacing: 5px;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flying-object {
+  0% {
+    position: relative;
+    left: 0;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
